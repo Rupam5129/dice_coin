@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+h2 {
+    color: #444;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background-color: #ff0000;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Dice Styles */
+.dice-wrapper {
+    perspective: 800px;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+}
+
+.dice {
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s ease-in-out;
+    position: relative;
+}
+
+.face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.face.one { transform: rotateY(0deg) translateZ(75px); }
+.face.two { transform: rotateY(90deg) translateZ(75px); }
+.face.three { transform: rotateY(180deg) translateZ(75px); }
+.face.four { transform: rotateY(-90deg) translateZ(75px); }
+.face.five { transform: rotateX(90deg) translateZ(75px); }
+.face.six { transform: rotateX(-90deg) translateZ(75px); }
+
+/* Coin Styles */
+.coin-wrapper {
+    perspective: 800px;
+    margin: 20px auto;
+    width: 120px;
+    height: 120px;
+}
+
+.coin {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    position: relative;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.coin-front, .coin-back {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.coin-front {
+    transform: rotateY(0deg) translateZ(5px);
+    background: linear-gradient(145deg, #f39c12, #e67e22);
+}
+
+.coin-back {
+    transform: rotateY(180deg) translateZ(5px);
+    background: linear-gradient(145deg, #d35400, #c0392b);
+}
